@@ -1,0 +1,197 @@
+css: @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    src: url(../fuentes/variante3.otf);
+    font-family: 'miFuente';
+    font-weight: 400;
+}
+
+@font-face {
+    src: url(../fuentes/variante1.otf);
+    font-family: 'miFuente1';
+    font-weight: 400;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Header y nav arriba en fondo blanco */
+header, nav {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: none;
+    position: relative;
+    z-index: 10;
+}
+
+header p {
+    font-style: italic;
+  }
+
+/* Navegación centrada */
+nav a {
+    text-decoration: none;
+    color: #628bc9;
+    font-weight: 700;
+    margin: 10px;
+}
+
+/* Contenedor principal con margen, fondo gris claro y sombra */
+main, footer {
+    background-color: #f2f2f2;
+    margin: 40px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* Footer dentro del mismo estilo, con ajustes */
+footer {
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Título animado con fuente personalizada */
+h1 {
+    font-family: miFuente;
+    font-size: 40px;
+    animation-name: aparecer;
+    animation-duration: 5s;
+    animation-timing-function: steps(5);
+}
+
+h2 {
+    font-family: 'miFuente1', sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    color: #000000;
+}
+
+h3 {
+    font-style: italic;
+    font-size: 25 px;
+    text-align: center;
+}
+
+p {
+    font-family: 'miFuente1';
+    text-align: center;
+    text-size: 30px;
+}
+
+/* Animación para el título */
+@keyframes aparecer {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* Galería en grilla */
+#grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(3 ,1fr);
+    gap: 10px;
+    padding: 5px;
+    width: 85%;
+    margin: 0 auto; 
+}
+
+/* Estilo de imágenes */
+img {
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo de cada tarjeta de proyecto */
+.proyecto {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 10px;
+    transition: all 0.5s linear;
+    width: 100%; /* ocupa todo el ancho del grid */
+    box-sizing: border-box;
+}
+
+
+.proyecto:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+
+#sobre-mi {
+    width: 50%; 
+    max-width: 900px;
+    margin: 40px auto 60px; 
+    text-align: center;
+}
+
+#servicios-contenedores {
+    width: 85%;
+    margin: 0 auto 60px; 
+}
+
+
+#servicios-container > h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+}
+#servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+#portfolio > h2 {
+    width: 85%;
+    margin: 40px auto 20px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+#portfolio #grid-galeria {
+    width: 85%;
+    margin: 0 auto;
+}
+
+#contacto {
+    background-color: white;
+    width: 85%;
+    max-width: 900px;
+    margin: 60px auto 40px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#contacto h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    
+}
+
+#contacto a {
+    margin: 0 10px;
+    font-weight: 700;
+    color: #628bc9;
+  }
