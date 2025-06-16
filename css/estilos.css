@@ -1,4 +1,94 @@
-css: @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* ... (resto del CSS original sin cambios) ... */
+
+/* 🌐 RESPONSIVE: Estilos para pantallas menores a 768px */
+@media screen and (max-width: 768px) {
+    main, footer {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+        text-align: justify;
+        padding: 0 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #grid-galeria {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #servicios {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #sobre-mi,
+    #contacto,
+    #servicios-contenedores,
+    #portfolio #grid-galeria,
+    #portfolio > h2 {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #contacto {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+
+    #servicios-container > h2,
+    #contacto h2 {
+        font-size: 24px;
+    }
+}
+✅ ¿Qué cambia?
+Margen y padding reducidos para celulares (main, footer, #contacto, etc.).
+
+width: 95% aplicado a secciones clave para que se vea proporcionado.
+
+padding lateral en <p> para evitar texto pegado al borde.
+
+Las grillas (galería y servicios) se adaptan a 1 columna (grid-template-columns: 1fr).
+
+Si querés que lo revise con HTML o que lo vea como si fuera un mockup visual, decímelo y lo armamos 👌
+
+
+
+
+
+
+
+Tú dijiste:
+pero devolveme todo lo lindo que tenia el otro, los colroes, cajas etc. Este quedo blanco
+
+
+ChatGPT Plus
+Claro, Rosario. Te devuelvo el CSS completo, con todo el estilo, colores, sombras y cajas que tenías antes, pero con las correcciones para que en móvil se vea bien con márgenes, anchos y grillas adaptadas.
+
+css
+Copiar
+Editar
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
     src: url(../fuentes/variante3.otf);
@@ -12,31 +102,31 @@ css: @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@
     font-weight: 400;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background-color: #ffffff;
     color: #333;
 }
 
-/* Header y nav arriba en fondo blanco */
 header, nav {
     width: 100%;
     background-color: #ffffff;
     padding: 10px;
     text-align: center;
-    box-shadow: none;
     position: relative;
     z-index: 10;
 }
 
 header p {
     font-style: italic;
-  }
+}
 
-/* Navegación centrada */
 nav a {
     text-decoration: none;
     color: #628bc9;
@@ -44,7 +134,6 @@ nav a {
     margin: 10px;
 }
 
-/* Contenedor principal con margen, fondo gris claro y sombra */
 main, footer {
     background-color: #f2f2f2;
     margin: 40px;
@@ -53,15 +142,12 @@ main, footer {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-
-/* Footer dentro del mismo estilo, con ajustes */
 footer {
     color: #333;
     font-size: 20px;
     text-align: center;
 }
 
-/* Título animado con fuente personalizada */
 h1 {
     font-family: miFuente;
     font-size: 40px;
@@ -79,33 +165,31 @@ h2 {
 
 h3 {
     font-style: italic;
-    font-size: 25 px;
+    font-size: 25px;
     text-align: center;
 }
 
 p {
     font-family: 'miFuente1';
     text-align: center;
-    text-size: 30px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-/* Animación para el título */
 @keyframes aparecer {
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
 
-/* Galería en grilla */
 #grid-galeria {
     display: grid;
-    grid-template-columns: repeat(3 ,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     padding: 5px;
     width: 85%;
     margin: 0 auto; 
 }
 
-/* Estilo de imágenes */
 img {
     width: 100%;
     border-radius: 10px;
@@ -116,7 +200,6 @@ img:hover {
     transform: scale(1.05);
 }
 
-/* Estilo de cada tarjeta de proyecto */
 .proyecto {
     background-color: white;
     border: 1px solid #ddd;
@@ -124,34 +207,32 @@ img:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding: 10px;
     transition: all 0.5s linear;
-    width: 100%; /* ocupa todo el ancho del grid */
+    width: 100%;
     box-sizing: border-box;
 }
-
 
 .proyecto:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-
 #sobre-mi {
-    width: 50%; 
+    width: 85%;
     max-width: 900px;
-    margin: 40px auto 60px; 
+    margin: 40px auto 60px;
     text-align: center;
 }
 
 #servicios-contenedores {
     width: 85%;
-    margin: 0 auto 60px; 
+    margin: 0 auto 60px;
 }
-
 
 #servicios-container > h2 {
     margin-bottom: 20px;
     font-size: 28px;
     font-weight: 700;
 }
+
 #servicios {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -164,7 +245,6 @@ img:hover {
     font-size: 28px;
     font-weight: 700;
 }
-
 
 #portfolio #grid-galeria {
     width: 85%;
@@ -187,11 +267,72 @@ img:hover {
     margin-bottom: 20px;
     font-size: 28px;
     font-weight: 700;
-    
 }
 
 #contacto a {
     margin: 0 10px;
     font-weight: 700;
     color: #628bc9;
-  }
+}
+
+/* 🌐 RESPONSIVE: Estilos para pantallas menores a 768px */
+@media screen and (max-width: 768px) {
+    main, footer {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+        text-align: justify;
+        padding: 0 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #grid-galeria {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #servicios {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #sobre-mi,
+    #contacto,
+    #servicios-contenedores,
+    #portfolio #grid-galeria,
+    #portfolio > h2 {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #contacto {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+
+    #servicios-container > h2,
+    #contacto h2 {
+        font-size: 24px;
+    }
+}
